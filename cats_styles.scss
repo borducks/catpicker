@@ -1,0 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+$grey: #666;
+$ltgrey: #999;
+$orange: #FF8000;
+$blue: #0080FF;
+$red: #900;
+$xcolor: black;
+
+
+body {
+	font-weight: 300;
+	font-family: "Open Sans";
+	color: $ltgrey;
+}
+
+p {
+	margin: 0;
+}
+
+.banner {
+	font-weight: 300;
+	color: $orange;
+}
+
+h4 {
+	color: darken($ltgrey, 20%);
+	font-weight: 400;
+	margin:0;
+}
+
+.selected_categories {
+	width: 100%;
+	min-height: 4em;
+	border-radius: .25em;
+	margin-bottom: 1em;
+	background-color: #333;
+	padding: .5em;
+	box-sizing: border-box;
+}
+
+.category_picker_cntnr {
+
+	width: 100%;
+	height: 91em;
+	overflow: hidden;
+	
+	// controls overall sizing
+	font-size: .8em;
+	
+	
+	.category {
+		box-sizing: border-box;
+		border-left: .2em dotted $grey;
+		float: left;
+		padding: 0 1em;
+		transition: width 1s;
+		width: 10em;
+		
+		&:not(.level_1) {
+			display: none;
+		}
+	
+		.category_tile {
+			position: relative;
+			box-sizing: border-box;
+			width: 8em;
+			height: 8em;
+			cursor: pointer;
+			overflow: hidden;
+			margin-bottom: 1em;
+
+			.remove {
+				display: none;
+			}
+			.category_title {
+				position: absolute;
+				bottom: 3px;
+				left: 3px;
+				right: 3px;
+				color: #fff;
+				font-size: 0.9em;
+				line-height: 1.2em;
+			}
+
+			.category_image {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: $grey;
+			}	  
+		}
+	}
+	
+	.category.floated {
+		border: none;
+		width: 50em;
+	}
+		
+	.category_tile {
+		float: left;
+		margin-right: 1em;
+	}
+	
+	.selected {
+		background-color: #393;
+	}
+}
+
+
