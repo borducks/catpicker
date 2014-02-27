@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<title>categories data test</title>
+	<link rel="stylesheet" href="datatest.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+		
+	<h1>category data test</h1>
+		
+	<div class="cat_wrap">
+			
+	</div>
+		
+		
+	<script type="text/javascript" charset="utf-8">
+	
+	$(document).on('click', '.tile', onTileClick)
+	
+	// build category groups
+	
+	$.each(flatdata, function (index, group) {
+		// add tiles for top cats
+		console.log(group.parent);
+		
+		$('.cat_wrap').append('<section class="cat_group '+group.parent+'">');
+		
+		for (var i = 0; i < group.children.length; i++) {
+			$('.cat_group.'+group.parent).append('<div class="tile '+group.children[i]+'"><div class="title">'+group.children[i]+'</div></div>');
+		}
+	});
+	
+	function onTileClick(event) {
+		console.log(event.target.className);
+		
+		var parent = event.target.className.split(" ").pop();
+		console.log(parent);
+		// get cat name from class list and match to cat group class
+		var eventGroupIndex = $(event.target).parent().index();
+		$('.cat_group:gt('+eventGroupIndex+')').fadeOut(200, function() {
+			$('.cat_group.'+parent).fadeIn();
+		});
+	}
+			
+	</script>
+</body>
+</html>
