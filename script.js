@@ -4,8 +4,7 @@ $(document).ready(function (event) {
 	// assign event handlers
 	$('.category .category_tile').on('click', handleCategoryClick);
 	$('.selected_categories .category_tile').on('click', handleSelectedCategoryClick);
-	
-	
+	$('body').on('click', '.selected_categories .category_tile', removeSelectedItem);
 	
 	// funcs
 	function handleSelectedCategoryClick(event) {
@@ -58,6 +57,22 @@ $(document).ready(function (event) {
 	// add tile to selected
 	
 	// remove tile from selected
+	
+	function removeSelectedItem(event) {
+		// remove a selected item from the side/top list
+		// remove selected class from clone source
+		
+		var catname = $(this).data('category-name');
+		console.log('remove item '+catname);
+		
+		$(this).remove();
+		
+		var tounselect = $('.category_tile').filter('[data-category-name="'+catname+'"]');
+		console.log('unselect '+tounselect);
+		
+		$('.category_tile').filter('[data-category-name="'+catname+'"]').removeClass('selected');
+		
+	}
 	
 	
 
