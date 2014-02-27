@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>new category picker: ol test</title>
+	<link rel="stylesheet" href="cats_ol_styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<h1 class="banner">ol test</h1>
+	
+	
+	<div class="cat_wrap">
+		<ul>
+			<li class="category top">Animals
+				<ul>
+					<li class="category child">Cats
+						<ul>
+							<li class="category child">Tabby</li>
+							<li class="category child">Persian</li>
+							<li class="category child">Grumpy</li>
+							<li class="category child">Hairballs</li>
+						</ul>
+					</li>
+				
+					<li class="category child">Dogs
+						<ul>
+							<li class="category child">Poodles</li>
+							<li class="category child">Grooming</li>
+							<li class="category child">Mutts</li>
+						</ul>
+					</li>
+					<li class="category child">Birds</li>
+				</ul>
+			</li>
+			<li class="category top">Fruit</li>
+			<li class="category top">Cars</li>
+			<li class="category top">Entertainment</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(event){
+		console.log('go');
+		
+		$('.category').on('click', revealChildren);
+		
+		
+		function revealChildren(event) {
+			// reveal children of target
+			console.log(event.target.className);
+			console.log($(event.target).children(0).show());
+			
+			
+		}
+		
+	})
+	</script>
+
+</body>
+</html>
+

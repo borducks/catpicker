@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+$grey: #666;
+$ltgrey: #999;
+$orange: #FF8000;
+$blue: #0080FF;
+$red: #900;
+$xcolor: black;
+
+
+body {
+	font-weight: 300;
+	font-family: "Open Sans";
+	color: $ltgrey;
+}
+
+ul {
+//	list -style: none;
+}
+
+li.category {
+	cursor: pointer;
+}
+
+.category {
+	
+	&.top {
+		ul {
+			//display: none;
+		}
+	}
+}
