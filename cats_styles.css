@@ -67,8 +67,8 @@ h4 {
 
 .category_picker_cntnr {
   float: left;
-  height: 91em;
   overflow: hidden;
+  max-width: 80%;
   font-size: .8em; }
   .category_picker_cntnr .category {
     box-sizing: border-box;
@@ -117,16 +117,16 @@ h4 {
   .category_picker_cntnr .selected {
     background-color: #393; }
 
-.cats {
-  position: relative; }
-  .cats section.category.top {
-    cursor: pointer; }
-    .cats section.category.top section {
-      display: none;
-      position: absolute;
-      top: 0;
-      float: left; }
+@media screen and (max-width: 1310px) {
+  .category_picker_cntnr {
+    width: 100%; }
 
+  .selected_categories_cntnr {
+    float: none; }
+    .selected_categories_cntnr .selected_categories {
+      float: none; }
+      .selected_categories_cntnr .selected_categories .category_tile {
+        float: left; } }
 .cf:before,
 .cf:after {
   content: " ";

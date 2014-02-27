@@ -91,9 +91,9 @@ h4 {
 
 .category_picker_cntnr {
 	float: left;
-//	width: 100%;
-	height: 91em;
 	overflow: hidden;
+	
+	max-width: 80%;
 	
 	// controls overall sizing
 	font-size: .8em;
@@ -164,19 +164,25 @@ h4 {
 	}
 }
 
-.cats {
-	position: relative;
+@media screen and (max-width:1310px){
+
 	
-	section.category.top {
-		cursor: pointer;
+	.category_picker_cntnr {
+		width: 100%;
+	}
 	
-		& section {
-			display: none;
-			position: absolute;
-			top: 0;
-			float: left;
+	.selected_categories_cntnr {
+		float:none;
+		
+		.selected_categories {
+			float: none;
+			
+			.category_tile {
+				float:left;
+			}
 		}
 	}
+
 }
 
 
