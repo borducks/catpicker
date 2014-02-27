@@ -88,8 +88,8 @@ h4 {
       overflow: hidden;
       margin-bottom: 1em;
       border: 2px solid transparent; }
-      .category_picker_cntnr .category .category_tile.selected {
-        border-color: red; }
+      .category_picker_cntnr .category .category_tile.selected .category_image {
+        background-color: #069; }
       .category_picker_cntnr .category .category_tile .remove {
         display: none; }
       .category_picker_cntnr .category .category_tile .category_title {

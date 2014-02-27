@@ -122,7 +122,11 @@ h4 {
 			border: 2px solid transparent;
 			
 			&.selected {
-				border-color: red;
+				//border-color: red;
+				
+				.category_image {
+					background-color: #069;
+				}
 			}
 			.remove {
 				display: none;
