@@ -3,18 +3,35 @@ $(document).ready(function (event) {
 	
 	// assign event handlers
 	$('.category .category_tile').on('click', handleCategoryClick);
+	$('.selected_categories .category_tile').on('click', handleSelectedCategoryClick);
 	
 	
 	
 	// funcs
-	function handleCategoryClick(event) {
+	function handleSelectedCategoryClick(event) {
 		// category_tile is target
 		
-		//switch to column view
-		changeToColumnMode($(event.target));
+	}
+
+	function handleCategoryClick(event) {
+		// category_tile is target
+
+		// check if lowest level
+		if ($(event.target).data('category-level') != 4){
+			//switch to column view
+			changeToColumnMode($(event.target));
 		
-		// display subcategories of target
-		initSubcategory($(event.target).data('category-name'));
+			// display subcategories of target
+			initSubcategory($(event.target).data('category-name'));
+		}
+		selectDeselect($(event.target));
+	}
+
+	function selectDeselect(tile) {
+		// is tile selected?
+		if (!tile.hasClass('selected')) {
+			tile.addClass('selected').clone().appendTo('.selected_categories');
+		}
 	}
 	
 	function changeToColumnMode(tile) {
